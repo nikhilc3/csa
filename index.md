@@ -3,13 +3,56 @@ layout: default
 title: Student Blog
 ---
 
-## Luna's Page
-
-Go to my [Github account](https://github.com/lunaiwa) !!
-
-## Overview of Hacks, Study and Tangibles
-Blogging in GitHub pages is a way to learn and code at the same time. 
-
-- Plans, Lists, [Scrum Boards](https://clickup.com/blog/scrum-board/) help you to track key events, show progress and record time.  Effort is a big part of your class grade.  Show plans and time spent!
-- [Hacks(Todo)](https://levelup.gitconnected.com/six-ultimate-daily-hacks-for-every-programmer-60f5f10feae) enable you to stay in focus with key requirements of the class.  Each Hack will produce Tangibles.
-- Tangibles or [Tangible Artifacts](https://en.wikipedia.org/wiki/Artifact_(software_development)) are things you accumulate as a learner and coder. 
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #2c3e50;
+                color: #ecf0f1;
+            }
+            .Title {
+                position: absolute;
+                left: 50%;
+                top: 90px;
+                transform: translate(-50%, -50%);
+                transition: color 0.5s; 
+            }
+            .Title:hover {
+                cursor: pointer; 
+            }
+            .codeText {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 3em;
+                animation: colorChange 5s infinite alternate, moveUpDown 2s infinite alternate;
+                cursor: pointer;
+            }
+            @keyframes colorChange {
+                0% { color: #e74c3c; }
+                25% { color: #3498db; }
+                50% { color: #2ecc71; }
+                75% { color: #f39c12; }
+                100% { color: #e74c3c; }
+            }
+            @keyframes moveUpDown {
+                0% { transform: translateY(-10px) translateX(-50%); }
+                100% { transform: translateY(10px) translateX(-50%); }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="Title" onmouseover="changeColor(this)" onmouseout="resetColor(this)">Nikhil's Github Pages</h1>
+        <div class="codeText">code/code/code</div>
+        <script>
+            function changeColor(element) {
+                element.style.color = "#e67e22";
+            }
+            function resetColor(element) {
+                element.style.color = "#ecf0f1";
+            }
+        </script>
+    </body>
+</html>
