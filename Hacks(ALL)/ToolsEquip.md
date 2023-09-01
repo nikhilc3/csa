@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Tools&Equip
+type: hacks
+courses: { 'csa': {'week':0} }
 ---
 
 

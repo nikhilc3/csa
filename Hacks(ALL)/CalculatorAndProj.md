@@ -1,9 +1,12 @@
 ---
 layout: default
-title: Project
+title: Calculator Project
+type: hacks
+courses: { 'csa': {'week':0} }
 ---
 
-<!DOCTYPE HTML>
+
+
 <html>
     <head>
         <style>
@@ -13,7 +16,6 @@ title: Project
                 bottom:25%;
                 transform:translate(-50%,-50%);
             }
-
             .game {
                 width: 300px;
                 margin: 20px auto;
@@ -23,25 +25,21 @@ title: Project
                 background-color: #f5f5f5;
                 text-align: center;
             }
-
             .btnGuess {
                 margin: 10px;
                 padding: 10px 20px;
                 cursor: pointer;
             }
-
             .gameResult {
                 margin-top: 20px;
                 font-size: 18px;
             }
-            
             .title{
                 position:absolute;
                 left:30%;
                 top:30%;
                 transform:translate(-50%,-50%);
             }
-
             .calculator {
                 width: 250px;
                 margin: 20px auto;
@@ -58,12 +56,10 @@ title: Project
                 text-align: right;
                 border: none;
             }
-
             .buttons {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
             }
-
             button {
                 padding: 20px;
                 border: none;
@@ -72,27 +68,21 @@ title: Project
                 cursor: pointer;
                 transition: background-color 0.3s;
             }
-
             button:hover {
                 background-color: #f5f5f5;
             }
-
             .equals {
                 grid-column: 1 / span 3;
                 background-color: #0074d9;
                 color: white;
             }
-
-
             .clear {
                 background-color: #f44336; /* Red color for clarity */
                 color: white; /* White text color */
             }
-
             .clear:hover {
                 background-color: #f5f5f5; /* Darker red when hovered */
             }
-
         </style>
     </head>
     <body>
@@ -104,36 +94,22 @@ title: Project
                 <button class="num" value="2">2</button>
                 <button class="num" value="3">3</button>
                 <button class="op" value="-">-</button>
-
-
                 <button class="num" value="4">4</button>
                 <button class="num" value="5">5</button>
                 <button class="num" value="6">6</button>
                 <button class="op" value="*">*</button>
-
-
                 <button class="num" value="7">7</button>
                 <button class="num" value="8">8</button>
                 <button class="num" value="9">9</button>
                 <button class="op" value="/">/</button>
-        
-
-        
-                
                 <button class="num" value="0">0</button>
                 <button value="." class="num">.</button>
                 <button>   </button>
                 <button class="op" value="+">+</button>
                 <button value="=" class="equals">=</button>
                 <button class="clear">Clear</button>
-                
-                
-
             </div>
         </div>
-
-
-
         <h1 class = "title1"> Coin Flip Game</h1>
         <div class="game">
             <p>Guess whether the coin will be heads or tails:</p>
@@ -141,9 +117,6 @@ title: Project
             <button class="btnGuess" data-guess="tails">Tails</button>
             <p class="gameResult"></p>
         </div>
-                
-
-        
     </body>
     <script>
         let screen = document.querySelector('.screen');
@@ -153,13 +126,11 @@ title: Project
         let currentOp = '';
         let currentValue = '';
         let prevValue = '';
-
         nums.forEach(num => {
             num.addEventListener('click', function() {
                 screen.value += this.value;
             });
         });
-
         ops.forEach(op => {
             op.addEventListener('click', function() {
                 prevValue = screen.value;
@@ -167,10 +138,8 @@ title: Project
                 currentOp = this.value;
             });
         });
-
         equals.addEventListener('click', function() {
             currentValue = screen.value;
-
             if (currentOp && currentValue) {
                 screen.value = eval(prevValue + currentOp + currentValue);
                 currentOp = '';
@@ -178,17 +147,12 @@ title: Project
                 prevValue = '';
             }
         });
-
-
-
         let buttons = document.querySelectorAll('.btnGuess');
         let gameResult = document.querySelector('.gameResult');
-
         buttons.forEach(button => {
             button.addEventListener('click', function() {
                 let userGuess = this.getAttribute('data-guess');
                 let coinFlipResult = Math.random() < 0.5 ? 'heads' : 'tails';
-
                 if (userGuess === coinFlipResult) {
                     gameResult.textContent = `You're right! It was ${coinFlipResult}!`;
                 } else {
@@ -196,17 +160,12 @@ title: Project
                 }
             });
         });
-        
         let clear = document.querySelector('.clear');
-
-       
         clear.addEventListener('click', function() {
             screen.value = ''; 
             currentOp = ''; 
             currentValue = ''; 
             prevValue = ''; 
         });
-
-        
     </script>
 </html>

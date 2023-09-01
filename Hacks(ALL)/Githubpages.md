@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Project
+type: hacks
+courses: { 'csa': {'week':0} }
 ---
 
 

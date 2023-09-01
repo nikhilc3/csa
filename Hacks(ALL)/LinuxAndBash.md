@@ -1,6 +1,11 @@
+---
+layout: default
+title: Linux and Bash hacks
+type: hacks
+courses: { 'csa': {'week':0} }
+---
 <html>
     <head>
-
     </head>
     <body>
         <p>
