@@ -36,7 +36,6 @@ def extract_front_matter(notebook_file, cell):
 
 # Function to convert the notebook to Markdown with front matter
 def convert_notebook_to_markdown_with_front_matter(notebook_file):
-    # Load the notebook file
     # Check if destination exists, and if not then create it
     if not os.path.exists(destination_directory):
         os.makedirs(destination_directory)
