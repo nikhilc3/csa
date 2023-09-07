@@ -37,6 +37,10 @@ def extract_front_matter(notebook_file, cell):
 # Function to convert the notebook to Markdown with front matter
 def convert_notebook_to_markdown_with_front_matter(notebook_file):
     # Load the notebook file
+    # Check if destination directory exists; if not, create it
+    if not os.path.exists(destination_directory):
+        os.makedirs(destination_directory)
+
     with open(notebook_file, 'r', encoding='utf-8') as file:
         notebook = nbformat.read(file, as_version=nbformat.NO_CONVERT)
         
