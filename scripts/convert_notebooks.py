@@ -69,6 +69,7 @@ def convert_notebook_to_markdown_with_front_matter(notebook_file):
 
 # Function to convert the Jupyter Notebook files to Markdown
 def convert_single_notebook(notebook_file):
+    print(f"Processing: {notebook_file}")  # Add this line
     try:
         convert_notebook_to_markdown_with_front_matter(notebook_file)
     except ConversionException as e:
